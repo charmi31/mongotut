@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mongo Tutorial</title>
+		<meta charset="utf-8">  
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> 		
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,600,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<link rel="stylesheet" href="/stylesheets/foundation.css">		
+	</head>
+	<body>
+		<div class="container large-10 medium-10 small-10" style="margin-bottom:5%;">
+			<div class="row">
+				<button onclick="location.href='/save'" style="padding: 2%;background: orange;color: white;">Add User</button>
+			</div>
+			<div class="row" style="margin-top:3%;">
+				<% if(userArray){ %>
+		  			<% userArray.forEach(function(user, index) { %>		
+						<div class="large-3 medium-12 small-12 columns">
+							<h6>Id : <%= user._id %></h6>	
+							<h6>First Name : <%= user.firstName %></h6>
+					  		<h6>Last Name : <%= user.lastName %></h6>
+					  		<h6>Email : <%= user.email %></h6>
+					  		<h6>Phone : <%= user.phone %></h6>				
+					  		<h6>Password : <%= user.password %></h6>
+					  		<div class="large-6b medium-6 small-6 columns">
+					  			<button onclick="location.href='/save?id=<%= user._id %>'">Edit</button>
+					  		</div>
+					  		<div class="large-6b medium-6 small-6 columns">
+					  			<button onclick="location.href='/delete?id=<%= user._id %>'">Delete</button>
+					  		</div>
+					  	</div>				
+					<% }); %>
+		  		<% } %>	
+		  	</div>	  		
+		</div>			  			
+		<script src="/javascripts/jquery-1.11.1.min.js"></script>
+		<script src="/javascripts/foundation.min.js"></script>			
+	</body>
+</html>
+

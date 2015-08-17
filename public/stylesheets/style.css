@@ -1,0 +1,9 @@
+.container{	
+	margin: 0px auto;	
+	margin-top:5%;	
+}
+
+#createAccountButton{
+	width: 100% !important;
+	padding: 2% !important;
+}
